@@ -1,0 +1,29 @@
+<div class = "d-flex align-items-center">
+  <h1>体験記一覧</h1>
+  <div class="ml-auto articles_button">
+        <a class="btn btn-outline-info" href="/articles/new" role="button">投稿</a>
+  </div>
+</div>
+
+<table class="table table-bordered border-primary table-hover table-sm articles_table">
+  <thead class="bg-info text-light">
+    <tr>
+      <th scope="col" style="width: 40px">No.</th>
+      <th scope="col" style="width: 700px">タイトル</th>
+      <th scope="col">投稿日</th>
+      <th scope="col">更新日時</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @articles.each do |article| %>
+      <tr>
+        <th><%= article.id %></th>
+        <td><%= link_to article.title, article_path(article) %></td>
+        <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
+        <td><%= article.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

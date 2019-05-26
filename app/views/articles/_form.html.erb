@@ -1,0 +1,30 @@
+<% if article.errors.any? %>
+  <div id="error_explanation" class="alert alert-danger">
+    <ul>
+      <% article.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for article do |f| %>
+    <div class="form-group">
+        <%= f.label :title, '投稿タイトル' %>
+        <%= f.text_field :title, class: 'form-control' %>
+        <small id="title-tip" class="form-text text-muted">
+            タイトルを入力してください。
+        </small>
+    </div>
+    <div class="form-group">
+        <%= f.label :description, '投稿内容' %>
+        <%= f.text_area :description, class: 'form-control', rows:10 %>
+        <small id="content-tip" class="form-text text-muted">
+            投稿内容を入力してください。 
+        </small>
+    </div>
+    <%= f.submit "投稿", class: 'btn btn-info btn-block' %>
+    <small id="submit-tip" class="form-text text-muted">
+        投稿する前に投稿内容を見直してください!
+    </small>
+<% end %>

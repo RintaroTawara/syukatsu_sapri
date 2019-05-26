@@ -1,0 +1,16 @@
+<div class="d-flex align-items-center mt-4 mb-4">
+  <div class="ml-auto articles_button">
+    <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-info" %>
+    <%= link_to "編集", edit_article_path, class: "btn btn-outline-info" %>
+    <%= link_to "削除", @article, method: :delete, class: 'btn btn-danger', data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-header bg-info text-white">
+      <h4><%= @article.title %></h4>
+  </div>
+  <div class="card-body">
+      <p class="card-text"><%= @article.description %></p>
+  </div>
+</div>
