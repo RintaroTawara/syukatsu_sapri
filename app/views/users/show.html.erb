@@ -1,2 +1,21 @@
-<h1>Users#show</h1>
-<h1>My page (<%= @user.username %>)</h1>
+<div class="d-flex align-items-center mt-4 mb-4">
+  <div class="ml-auto articles_button">
+    <% if user_signed_in? && @user == current_user %>
+      <%= link_to "ユーザー一覧", "#", class: "btn btn-outline-info" %>
+      <%= link_to "編集", "#", class: "btn btn-outline-info" %>
+    <% else %>
+      <%= link_to "投稿一覧", "#", class: "btn btn-outline-info" %>
+    <% end %>
+  </div>
+</div>
+
+<div class="card">
+  <div class="card-subtitle bg-secondary text-white">
+      <h4><%= @user.username %></h4>
+  </div>
+</div>
+<div class="card">
+  <div class="card-subtitle bg-secondary text-white">
+      <h4><%= @user.email %></h4>
+  </div>
+</div>
