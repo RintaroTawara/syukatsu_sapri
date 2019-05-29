@@ -5,6 +5,8 @@
   </div>
 </div>
 
+<%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
+
 <table class="table table-bordered border-primary table-hover table-sm articles_table">
   <thead class="bg-info text-light">
     <tr>
@@ -26,4 +28,4 @@
   </tbody>
 </table>
 
-
+<%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
