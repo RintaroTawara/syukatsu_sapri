@@ -11,6 +11,11 @@
 </div>
 
 <div class="card">
+  
+  <% if @article.image_id.present? %>
+    <%= image_tag attachment_url(@article, :image, :fill, 300, 300, format: "jpg") %>
+  <% end %>
+  
   <div class="card-header bg-info text-white">
       <h4><%= @article.title %></h4>
   </div>

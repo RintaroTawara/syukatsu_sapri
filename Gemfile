@@ -15,6 +15,8 @@ gem 'data-confirm-modal'
 gem 'rails-i18n'
 gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
+gem "refile", github: 'refile/refile', require: "refile/rails"
+gem "refile-mini_magick", github: 'refile/refile-mini_magick'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'
