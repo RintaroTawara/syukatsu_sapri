@@ -7,25 +7,20 @@
 
 <%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
-<table class="table table-bordered border-primary table-hover table-sm articles_table">
-  <thead class="bg-info text-light">
-    <tr>
-      <th scope="col" style="width: 40px">No.</th>
-      <th scope="col" style="width: 700px">タイトル</th>
-      <th scope="col">投稿日</th>
-      <th scope="col">更新日時</th>
-    </tr>
-  </thead>
-  <tbody>
+<div class="container">
+  <div class="row card-columns">
     <% @articles.each do |article| %>
-      <tr>
-        <th><%= article.id %></th>
-        <td><%= link_to article.title, article_path(article) %></td>
-        <td><%= article.created_at.strftime('%Y/%m/%d %H:%M') %></td>
-        <td><%= article.updated_at.strftime('%Y/%m/%d %H:%M') %></td>
-      </tr>
+    <div class="card col-md-4">
+      <%= link_to article do %>
+      <div class= 'card-body' %>
+        <%= image_tag attachment_url(article, :image), class: 'card-img-top' %>
+        <p class="card-title"><%= article.title %></p>
+        <%= article.created_at.strftime("%Y年%m月%d日") %>
+      </div>
+      <% end %>
+    </div>
     <% end %>
-  </tbody>
-</table>
+  </div>
+</div>
 
 <%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>

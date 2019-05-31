@@ -9,9 +9,11 @@
 <% end %>
 
 <%= form_for article do |f| %>
+    
     <div class="form-group">
         <%= f.attachment_field :image %>
     </div>
+    
     
     <div class="form-group">
         <%= f.label :title, '投稿タイトル' %>
