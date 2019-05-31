@@ -12,3 +12,13 @@
         cursor: pointer;
     }
 }
+
+.article-list-image{
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.article-block{
+    margin: 10px;
+}
