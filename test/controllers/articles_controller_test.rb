@@ -8,6 +8,7 @@ class ArticlesControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get articles_path
     assert_response :found
+    
   end
 
   test "should get show" do
