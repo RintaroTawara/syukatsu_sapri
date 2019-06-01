@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190530122200) do
+ActiveRecord::Schema.define(version: 20190601010843) do
 
   create_table "articles", force: :cascade do |t|
     t.string "title", null: false
@@ -37,7 +37,7 @@ ActiveRecord::Schema.define(version: 20190530122200) do
     t.datetime "confirmation_sent_at"
     t.string "unconfirmed_email"
     t.boolean "admin", default: false
-    t.string "username", null: false
+    t.string "username", default: "", null: false
     t.index ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
