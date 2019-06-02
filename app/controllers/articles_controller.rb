@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :index
+  before_action :correct_user, only: :destroy
   
   def index
     @articles = Article.paginate(page: params[:page])
@@ -41,9 +42,8 @@ class ArticlesController < ApplicationController
   end
   
   def destroy
-    article = current_user.articles.find(params[:id])
-    article.destroy
-    redirect_to articles_url, notice: "体験記「#{article.title}」を削除しました。"
+    @article.destroy
+    redirect_to articles_url, notice: "体験記「#{@article.title}」を削除しました。"
   end
   
   
@@ -53,4 +53,8 @@ class ArticlesController < ApplicationController
     params.require(:article).permit(:title, :description, :image)
   end
   
+  def correct_user
+    @article = current_user.articles.find_by(id: params[:id])
+    redirect_to root_url if @article.nil?
+  end
 end

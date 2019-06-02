@@ -13,7 +13,11 @@
     <div class="card col-md-4">
       <%= link_to article do %>
       <div class= 'card-body' %>
-        <%= image_tag attachment_url(article, :image), class: 'card-img-top' %>
+        <% if article.image_id.present? %>
+          <%= image_tag attachment_url(article, :image), class: 'card-img-top' %>
+        <% else %>
+          <%= image_tag 'joy-2483926_1280.jpg', class: 'card-img-top' %>
+        <% end %>
         <p class="card-title"><%= article.title %></p>
         <%= article.created_at.strftime("%Y年%m月%d日") %>
       </div>

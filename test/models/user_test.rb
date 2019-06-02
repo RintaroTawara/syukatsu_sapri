@@ -8,6 +8,4 @@ class UserTest < ActiveSupport::TestCase
       password: "password",
       password_confirmation: "password")
   end
-  
-  
 end
