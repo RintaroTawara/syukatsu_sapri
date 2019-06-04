@@ -4,9 +4,7 @@ gem 'rails',        '5.1.6'
 gem 'puma',         '3.9.1'
 gem 'sass-rails',   '5.0.6'
 gem 'uglifier',     '3.2.0'
-gem 'jquery-rails', '4.3.1'
-gem 'jquery-turbolinks'
-gem 'turbolinks',   '5.0.1'
+gem 'jquery-rails'
 gem 'jbuilder',     '2.7.0'
 gem 'devise'
 gem 'omniauth-facebook'
@@ -17,6 +15,7 @@ gem 'will_paginate',           '3.1.6'
 gem 'bootstrap-will_paginate', '1.0.0'
 gem "refile", github: 'refile/refile', require: "refile/rails"
 gem "refile-mini_magick", github: 'refile/refile-mini_magick'
+gem 'font-awesome-sass', '~> 5.4.1'
 
 group :development, :test do
   gem 'sqlite3', '1.3.13'

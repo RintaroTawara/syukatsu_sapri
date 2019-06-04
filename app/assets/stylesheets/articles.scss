@@ -19,6 +19,28 @@
   object-fit: cover;
 }
 
+.article-image{
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+}
+
 .article-block{
     margin: 10px;
+}
+
+.relative{
+    position: relative;
+    
+    i {
+        position: absolute;
+        top: 45%;
+        left: 47%;
+        color: white;
+        font-size: 60px;
+    }
+}
+
+#article_image {
+    display: none;
 }

@@ -9,11 +9,13 @@
 <% end %>
 
 <%= form_for article do |f| %>
-    
-    <div class="form-group">
-        <%= f.attachment_field :image %>
+
+    <div id="cover-image", class="form-group relative">
+        <%= image_tag "ELT140405465316_TP_V.jpg", class: "article-image", onClick:"$('#article_image').click()" %>
+        <i class="fa fa-camera"></i>
     </div>
     
+    <%= f.attachment_field :image %>
     
     <div class="form-group">
         <%= f.label :title, '投稿タイトル' %>
