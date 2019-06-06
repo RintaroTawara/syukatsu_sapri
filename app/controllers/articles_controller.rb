@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: :destroy
   
   def index
-    @articles = Article.paginate(page: params[:page])
+    @articles = Article.paginate(page: params[:page]).order(created_at: :desc)
   end
 
   def show
