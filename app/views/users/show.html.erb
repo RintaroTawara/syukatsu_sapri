@@ -2,9 +2,10 @@
   <div class="ml-auto articles_button">
     <% if user_signed_in? && @user == current_user %>
       <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-info" %>
-      <%= link_to "編集", "#", class: "btn btn-outline-info" %>
+      <%= link_to "編集", articles_path, class: "btn btn-outline-info" %>
     <% else %>
-      <%= link_to "投稿一覧", "#", class: "btn btn-outline-info" %>
+      <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-info" %>
+      <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-info" %>
     <% end %>
   </div>
 </div>

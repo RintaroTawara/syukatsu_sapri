@@ -1,0 +1,2 @@
+/*global $*/
+$("#like-of-<%= @article.id %>").html("<%= j(render partial: 'likes/like', locals: { article: @article}) %>")
