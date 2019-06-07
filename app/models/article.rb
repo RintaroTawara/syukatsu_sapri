@@ -11,4 +11,11 @@ class Article < ApplicationRecord
   def like_user(user_id)
    likes.find_by(user_id: user_id)
   end
+  
+  def iine(user)
+    likes.create(user_id: user.id)
+  end
+  def uniine(user)
+    likes.find_by(user_id: user.id).destroy
+  end
 end
