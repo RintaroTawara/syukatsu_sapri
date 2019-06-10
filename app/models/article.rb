@@ -1,4 +1,13 @@
 class Article < ApplicationRecord
+  
+  def self.search(search)
+    if search
+      Article.where(['title LIKE ?', "%#{search}%"])
+    else
+      Article.all
+    end
+  end
+  
   validates :user_id, presence: true
   validates :title, presence: true
   validates :description, presence: true
@@ -19,4 +28,5 @@ class Article < ApplicationRecord
   def uniine(user)
     likes.find_by(user_id: user.id).destroy
   end
+  
 end
