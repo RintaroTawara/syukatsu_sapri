@@ -27,4 +27,14 @@
 <span id="like-of-<%= @article.id %>">
   <%= render partial: 'likes/like', locals: { article: @article } %>
 </span>
+
+<div>
+    <h4>コメント</h4>
+    <div id="comments_area">
+      <%= render partial: 'comments/index', locals: { comments: @comments } %>
+    </div>  
+    <% if user_signed_in? %>
+      <%= render partial: 'comments/form', locals: { comment: @comment, article: @article } %>
+    <% end %>
+  </div>
 </div>
