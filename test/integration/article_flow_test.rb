@@ -6,7 +6,7 @@ class ArticleFlowTest < ActionDispatch::IntegrationTest
   def setup
     @user = users(:michael)
     login_as(@user, :scope => :user)
-    @article = @user.articles.create!(title: "hello", description: "rintaro tawara")
+    @article = @user.articles.create!(title: "hello", description: "rintaro tawara", company: "google")
   end
   
   test "can create an article" do

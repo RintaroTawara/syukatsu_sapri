@@ -7,6 +7,12 @@
 
 <%= will_paginate(@articles, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %>
 
+<p>検索</p>
+<%= form_tag(articles_path, :method => 'get') do %>
+  <%= text_field_tag :search %>
+  <%= submit_tag '検索', :title => nil %>
+<% end %>
+
 <div class="container">
   <div class="row card-columns">
     <% @articles.each do |article| %>

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   before_action :correct_user, only: :destroy
   
   def index
-    @articles = Article.paginate(page: params[:page]).order(created_at: :desc)
+    @articles = Article.paginate(page: params[:page]).order(created_at: :desc).search(params[:search])
   end
 
   def show
@@ -52,7 +52,7 @@ class ArticlesController < ApplicationController
   private
   
   def article_params
-    params.require(:article).permit(:title, :description, :image)
+    params.require(:article).permit(:title, :company, :description, :image)
   end
   
   def correct_user

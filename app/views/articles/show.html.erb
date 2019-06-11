@@ -10,7 +10,7 @@
   </div>
 </div>
 
-<div class="container">
+<div class="container cf-skin">
   <div class="col-md-12 article-block">
   
     <% if @article.image_id.present? %>
@@ -20,15 +20,16 @@
     <% end %>
     
     <h1><%= @article.title %></h1>
-    <h4><%= @user.username %></h4>
+    <h3><%= @article.company %></h3>
+    <p><%= @user.username %></p>
     <p class="card-text"><%= @article.description %></p>
   </div>
   
-<span id="like-of-<%= @article.id %>">
-  <%= render partial: 'likes/like', locals: { article: @article } %>
-</span>
+  <span id="like-of-<%= @article.id %>">
+    <%= render partial: 'likes/like', locals: { article: @article } %>
+  </span>
 
-<div>
+  <div>
     <h4>コメント</h4>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments } %>
