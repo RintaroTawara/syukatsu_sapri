@@ -1,9 +1,11 @@
 one:
   title: "Aaa"
+  company: "Aaa"
   description: "Aaa"
   user_id: 1
   
 two:
   title: "tow!"
+  company: "tow"
   description: "tow"
   user_id: 2

@@ -3,7 +3,7 @@ require 'test_helper'
 class ArticleTest < ActiveSupport::TestCase
   def setup
     @user = users(:michael)
-    @article = @user.articles.build(title: "hello", description: "rintaro tawara")
+    @article = @user.articles.build(title: "hello", description: "rintaro tawara", company: "google")
   end
   
   test "should be valid" do
@@ -17,6 +17,11 @@ class ArticleTest < ActiveSupport::TestCase
   
   test "title should be present" do
     @article.title = "  "
+    assert_not @article.valid?
+  end
+  
+  test "user id should be company" do
+    @article.company = nil
     assert_not @article.valid?
   end
   
