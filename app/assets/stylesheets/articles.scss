@@ -1,6 +1,32 @@
 // Place all the styles related to the Articles controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index{
+    font-size: 30px;
+}
+
+.paginate{
+    margin-top: 1%;
+}
+
+.search{
+    margin-top: 1rem;
+    margin-bottom: 0;
+}
+
+.search-input{
+    margin-bottom: 3%;
+}
+
+.article-title{
+    color: #313131;
+}
+
+.created-at{
+    color: #313131;
+}
+
 .articles_button {
     a {
         margin: 0 8px;
@@ -45,6 +71,4 @@
     display: none;
 }
 
-.cf-skin {
-    box-sizing: border-box;
-}
+
