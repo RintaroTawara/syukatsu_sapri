@@ -23,7 +23,9 @@ header{
     margin: auto;
     overflow: hidden;
     border-bottom: 1px solid;
-    margin-bottom: 1%;
+    margin-bottom: 3%;
+    background-color: #fffef8;
+    
 }
 .header-top{
     font-size: 120%;
@@ -39,6 +41,12 @@ header{
     letter-spacing: 3px;
     font-weight: 400;
     float: left;
+}
+
+.body-background{
+    background-color: white;
+    padding: 10px;
+    border: 1px solid #eee;
 }
 
 .link{
@@ -60,8 +68,9 @@ header{
 }
 
 
+
 body{
-  background-color: #fafafa;
+  background-color: #fffef8;
   font-family: "游ゴシック",YuGothic,"ヒラギノ角ゴ ProN W3","Hiragino Kaku Gothic ProN","メイリオ",Meiryo,"ＭＳ Ｐゴシック",sans-serif;
 }
 

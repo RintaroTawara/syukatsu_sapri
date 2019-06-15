@@ -14,7 +14,8 @@
 <div class="container">
   <div class="row card-columns">
     <% @articles.each do |article| %>
-    <div class="card col-md-4">
+    <div class="col-md-4">
+    <div class="index-card">
       <%= link_to article do %>
       <div class= 'card-body' %>
         <% if article.image_id.present? %>
@@ -26,6 +27,7 @@
         <p class= "created-at"><%= article.created_at.strftime("%Y年%m月%d日") %></p>
       </div>
       <% end %>
+    </div>
     </div>
     <% end %>
   </div>
