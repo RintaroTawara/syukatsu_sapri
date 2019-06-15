@@ -1,9 +1,9 @@
 <% comments.each do |comment| %>
   <% unless comment.id.nil? %>
-    <p><%= link_to "#{comment.user.username}さん", user_path(comment.user.id) %></p>
-    <p>コメント：<%= comment.content %></p>
+    <p class="margin-bottom-0"><%= link_to "#{comment.user.username}さん", user_path(comment.user.id), class: "font-color" %></p>
+    <p class="margin-bottom-0">コメント：<%= comment.content %></p>
     <% if comment.user == current_user %>
-      <p><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
+      <p class="comment-delete"><%= link_to '削除', article_comment_path(comment.article_id, comment.id), method: :delete, remote: true %></p>
     <% end %>
   <% end %>
 <% end %>

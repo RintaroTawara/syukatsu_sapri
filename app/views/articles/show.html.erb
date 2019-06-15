@@ -1,11 +1,11 @@
 <div class="d-flex align-items-center mt-4 mb-4">
   <div class="ml-auto articles_button">
     <% if user_signed_in? && @article.user == current_user %>
-      <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-info" %>
-      <%= link_to "編集", edit_article_path, class: "btn btn-outline-info" %>
+      <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-dark" %>
+      <%= link_to "編集", edit_article_path, class: "btn btn-outline-dark" %>
       <%= link_to "削除", @article, method: :delete, class: 'btn btn-danger', data: {confirm: "投稿記事を削除しますか？", cancel: "キャンセル", commit: "削除する", title: "削除の確認"} %>
     <% else %>
-      <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-info" %>
+      <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-dark" %>
     <% end %>
   </div>
 </div>
@@ -20,16 +20,16 @@
     <% end %>
     
     <h1><%= @article.title %></h1>
-    <h3><%= @article.company %></h3>
-    <p><%= @user.username %></p>
-    <p class="card-text"><%= @article.description %></p>
+    <h3><%= "(企業)#{@article.company}" %></h3>
+    <p><%= "#{@user.username}さん" %></p>
+    <p class="card-body"><%= @article.description %></p>
   </div>
   
   <span id="like-of-<%= @article.id %>">
     <%= render partial: 'likes/like', locals: { article: @article } %>
   </span>
 
-  <div>
+  <div class="comment">
     <h4>コメント</h4>
     <div id="comments_area">
       <%= render partial: 'comments/index', locals: { comments: @comments } %>

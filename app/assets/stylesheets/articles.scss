@@ -6,6 +6,12 @@
     font-size: 30px;
 }
 
+.index-card{
+    background: #fcfcfc;
+    border: 1px solid #313131;
+    margin: 15px 0px;
+}
+
 .paginate{
     margin-top: 1%;
 }
@@ -49,6 +55,7 @@
     width: 100%;
     height: 350px;
     object-fit: cover;
+    margin-top: 1rem;
 }
 
 .article-block{
@@ -71,4 +78,22 @@
     display: none;
 }
 
+.comment {
+    margin: 10px;
+    padding-left: 15px;
+    padding-right: 15px;
+}
 
+.margin-bottom-0 {
+    margin-bottom: 0;
+}
+
+.font-color{
+    color: #313131;
+}
+
+.cf-skin {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #eee;
+}

@@ -1,22 +1,28 @@
 <div class="d-flex align-items-center mt-4 mb-4">
   <div class="ml-auto articles_button">
     <% if user_signed_in? && @user == current_user %>
-      <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-info" %>
-      <%= link_to "編集", articles_path, class: "btn btn-outline-info" %>
+      <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-dark" %>
+      <%= link_to "編集", articles_path, class: "btn btn-outline-dark" %>
     <% else %>
-      <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-info" %>
-      <%= link_to "投稿一覧", articles_path, class: "btn btn-outline-info" %>
+      <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-dark" %>
     <% end %>
   </div>
 </div>
 
-<div class="card">
-  <div class="card-subtitle bg-secondary text-white">
-      <h4><%= @user.username %></h4>
+<div class="container cf-skin">
+  <div class="index">
+    <h1><%= @user.username %></h1>
   </div>
-</div>
-<div class="card">
-  <div class="card-subtitle bg-secondary text-white">
-      <h4><%= @user.email %></h4>
+
+  <span>いいねした投稿</span>
+  <div>
+  <% @likes.each do |like| %>
+  <div class="col-md-4">
+  <div class="index-card">
+    <% article = Article.find_by(id: like.article_id) %>
+    <%= link_to article.title, article_path(article), class: "article-title" %>
+  </div>
+  </div>
+  <% end %>
   </div>
 </div>
