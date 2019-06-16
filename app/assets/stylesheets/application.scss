@@ -96,3 +96,28 @@ footer address{
     color: #fff;
     letter-spacing: 5px;
 }
+
+.profile-image{
+    text-align: center;
+}
+
+.profile-image2{
+    display: inline-block;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background-position: center;
+}
+
+.like-index{
+    padding: 20px;
+    margin: 20px;
+}
+
+.user-name{
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+}
