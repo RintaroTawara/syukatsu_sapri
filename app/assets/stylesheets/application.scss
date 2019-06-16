@@ -61,6 +61,21 @@ header{
     font-weight: 400;
 }
 
+@media screen and (max-width: 428px) {
+    .link {
+        font-size: 70%;
+        color: #313131;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding-left: 20px;
+        float: right;
+        font-weight: 400;
+    }
+}
+
+
 .links{
     display: inline-block;
     color: #313131;
