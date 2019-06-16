@@ -10,7 +10,7 @@
   <header class="sticky-top">
     <%= link_to 'SyukatsuSapri', root_path, class: "header-top" %>
     <div class="link">
-      <% if user_signed_in? %> 
+      <% if user_signed_in? %>
         <%= link_to 'マイページ', user_path(current_user), class: "links" %>
         <%= link_to 'トップ', root_path, class: "links" %>
         <%= link_to '投稿する', new_article_path, class: "links" %>

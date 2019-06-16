@@ -2,7 +2,7 @@
   <div class="ml-auto articles_button">
     <% if user_signed_in? && @user == current_user %>
       <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-dark" %>
-      <%= link_to "編集", articles_path, class: "btn btn-outline-dark" %>
+      <%= link_to "編集", edit_user_registration_path, class: "btn btn-outline-dark" %>
     <% else %>
       <%= link_to "ユーザー一覧", users_path, class: "btn btn-outline-dark" %>
     <% end %>
@@ -10,19 +10,30 @@
 </div>
 
 <div class="container cf-skin">
+  
   <div class="index">
     <h1><%= @user.username %></h1>
   </div>
+  
+  <div class="profile-image">
+    <% if @user.image_id.present? %>
+      <%= image_tag attachment_url(@user, :image), class: "profile-image2" %>
+    <% else %>
+      <%= image_tag "人物シルエット.jpeg", class: "profile-image2" %>
+    <% end %>
+  </div>
 
-  <span>いいねした投稿</span>
-  <div>
-  <% @likes.each do |like| %>
-  <div class="col-md-4">
-  <div class="index-card">
-    <% article = Article.find_by(id: like.article_id) %>
-    <%= link_to article.title, article_path(article), class: "article-title" %>
-  </div>
-  </div>
-  <% end %>
+  <div class="like-index">
+    <span style="font-size: 30px">Likeした投稿</span>
+    <div>
+      <% @likes.each do |like| %>
+      <div class="col-md-4">
+      <div class="index-card">
+        <% article = Article.find_by(id: like.article_id) %>
+        <%= link_to article.title, article_path(article), class: "article-title" %>
+      </div>
+      </div>
+      <% end %>
+    </div>
   </div>
 </div>

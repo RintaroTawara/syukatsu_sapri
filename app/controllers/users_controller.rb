@@ -7,4 +7,6 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @likes = Like.where(user_id: @user.id).all
   end
+  
+  
 end

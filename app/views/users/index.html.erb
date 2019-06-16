@@ -6,7 +6,14 @@
     <div class="card col-md-4">
       <%= link_to user do %>
       <div class= 'card-body' %>
-        <p class="card-title"><%= user.username %></p>
+        <div class="profile-image">
+          <% if user.image_id.present? %>
+            <%= image_tag attachment_url(user, :image), class: "profile-image2" %>
+          <% else %>
+            <%= image_tag "人物シルエット.jpeg", class: "profile-image2" %>
+          <% end %>
+        </div>
+        <p class="user-name"><%= user.username %></p>
       </div>
       <% end %>
     </div>
