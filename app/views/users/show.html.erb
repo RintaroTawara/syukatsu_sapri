@@ -22,16 +22,31 @@
       <%= image_tag "人物シルエット.jpeg", class: "profile-image2" %>
     <% end %>
   </div>
+  
+  <%= render 'follow_form' %>
+  <section class="stats">
+    <%= render 'shared/stats' %>
+  </section>
+  
+  <div class="like-index">
+    <span style="font-size: 30px">投稿</span>
+    <div>
+      <% @articles.each do |article| %>
+      <div class="index-card">
+        <%= link_to article.title, article_path(article), class: "article-title" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+  
 
   <div class="like-index">
     <span style="font-size: 30px">Likeした投稿</span>
     <div>
       <% @likes.each do |like| %>
-      <div class="col-md-4">
       <div class="index-card">
         <% article = Article.find_by(id: like.article_id) %>
         <%= link_to article.title, article_path(article), class: "article-title" %>
-      </div>
       </div>
       <% end %>
     </div>

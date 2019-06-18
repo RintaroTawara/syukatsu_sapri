@@ -1,0 +1,28 @@
+<span class="index"><%= @title %></span>
+
+<div class="paginate"><%= will_paginate(@users, :renderer => WillPaginate::ActionView::Bootstrap4LinkRenderer) %></div>
+
+<div class="container">
+  <div class="row card-columns">
+    <% @users.each do |user| %>
+    <div class="col-md-4">
+    <div class="index-card">
+      <%= link_to user do %>
+      <div class= 'card-body' %>
+        <div class="profile-image">
+          <% if user.image_id.present? %>
+            <%= image_tag attachment_url(user, :image), class: 'profile-image2' %>
+          <% else %>
+            <%= image_tag "人物シルエット.jpeg", class: 'profile-image2' %>
+          <% end %>
+        </div>
+        <div class="text-center">
+          <span class="article-title"><%= user.username %></span>
+        </div>
+      </div>
+      <% end %>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>
