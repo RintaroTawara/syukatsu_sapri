@@ -1,24 +1,16 @@
-# README
+SyukatsuSapri
+====
+就活での面接の体験を共有できるサービスです。  
+URL: https://syukatsu-sapri.herokuapp.com
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Motivation
+小手先のテクニックや自分を大きく見せて面接に臨む学生を少しでも減らしたいと思い作りました。  
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Tech Notes
+ログイン機能  
+Facebook認証
+ユーザー認証機能  
+フォロー機能  
+ページネーション機能  
+画像投稿機能  
+お気に入り機能
